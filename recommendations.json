@@ -1,0 +1,53 @@
+{
+  "Apple - Apple Scab": "⚠️ Prune infected leaves and apply fungicides like captan or mancozeb. Improve air circulation.",
+  "Apple - Black Rot": "⚠️ Remove mummified fruits and apply fungicides in spring. Maintain orchard hygiene.",
+  "Apple - Cedar Apple Rust": "⚠️ Remove nearby cedar trees. Apply fungicides early in the season. Monitor regularly.",
+  "Apple - Healthy": "✅ Your apple tree is healthy. Continue regular watering and maintain orchard hygiene.",
+
+  "Blueberry - Healthy": "✅ Blueberry plant is healthy. Keep soil acidic, ensure proper watering, and monitor for pests.",
+
+  "Cherry (including sour) - Powdery Mildew": "⚠️ Remove affected leaves and apply fungicides. Ensure good airflow between trees.",
+  "Cherry (including sour) - Healthy": "✅ Cherry tree is healthy. Maintain proper watering and monitor for pests.",
+
+  "Corn (maize) - Cercospora Leaf Spot (Gray Leaf Spot)": "⚠️ Remove infected leaves, rotate crops, and apply fungicides as needed.",
+  "Corn (maize) - Common Rust": "⚠️ Apply fungicides and remove infected plant debris. Maintain proper spacing for airflow.",
+  "Corn (maize) - Northern Leaf Blight": "⚠️ Remove infected leaves and apply appropriate fungicides. Use resistant varieties if possible.",
+  "Corn (maize) - Healthy": "✅ Corn crop looks healthy. Ensure balanced fertilization and monitor for pests.",
+
+  "Grape - Black Rot": "⚠️ Prune infected vines and apply fungicides like myclobutanil. Maintain canopy airflow.",
+  "Grape - Esca (Black Measles)": "⚠️ Remove infected vines. No cure exists, but pruning delays spread.",
+  "Grape - Leaf Blight (Isariopsis Leaf Spot)": "⚠️ Remove affected leaves and apply fungicides. Ensure proper ventilation.",
+  "Grape - Healthy": "✅ Grapevine is healthy. Maintain good airflow, watering, and pest control.",
+
+  "Orange - Huanglongbing (Citrus Greening)": "⚠️ No cure. Remove infected trees to prevent spread and control psyllid insects.",
+
+  "Peach - Bacterial Spot": "⚠️ Remove infected fruits and leaves. Use resistant varieties if possible.",
+  "Peach - Healthy": "✅ Peach tree is healthy. Maintain proper watering and monitor for pests.",
+
+  "Pepper (bell) - Bacterial Spot": "⚠️ Remove affected plants. Avoid overhead watering. Apply copper-based sprays.",
+  "Pepper (bell) - Healthy": "✅ Pepper plant is healthy. Maintain proper watering and pest monitoring.",
+
+  "Potato - Early Blight": "⚠️ Remove diseased foliage, rotate crops, and apply fungicide sprays.",
+  "Potato - Late Blight": "⚠️ Destroy infected plants, avoid excess watering, and use resistant varieties.",
+  "Potato - Healthy": "✅ Potato plant looks healthy. Maintain soil health and balanced watering.",
+
+  "Raspberry - Healthy": "✅ Raspberry plant is healthy. Maintain proper watering and monitor for pests.",
+
+  "Soybean - Healthy": "✅ Soybean plant looks healthy. Maintain crop rotation and monitor for pests.",
+
+  "Squash - Powdery Mildew": "⚠️ Remove infected leaves, ensure airflow, and apply fungicides as needed.",
+
+  "Strawberry - Leaf Scorch": "⚠️ Remove affected leaves and apply fungicides. Maintain proper irrigation practices.",
+  "Strawberry - Healthy": "✅ Strawberry plant is healthy. Maintain proper watering and remove weeds.",
+
+  "Tomato - Bacterial Spot": "⚠️ Remove infected leaves and plants. Apply copper-based sprays and monitor closely.",
+  "Tomato - Early Blight": "⚠️ Remove diseased leaves, apply fungicides like chlorothalonil, and rotate crops annually.",
+  "Tomato - Late Blight": "⚠️ Destroy infected plants immediately. Spray copper-based fungicides to protect healthy plants.",
+  "Tomato - Leaf Mold": "⚠️ Improve air circulation, avoid overhead watering, and apply fungicides as needed.",
+  "Tomato - Septoria Leaf Spot": "⚠️ Remove infected leaves and apply fungicides. Avoid overhead irrigation.",
+  "Tomato - Spider Mites (Two-spotted Spider Mite)": "⚠️ Use miticides, maintain humidity, and remove heavily infested leaves.",
+  "Tomato - Target Spot": "⚠️ Remove infected leaves and apply fungicides. Ensure proper spacing between plants.",
+  "Tomato - Yellow Leaf Curl Virus": "⚠️ Control whiteflies, remove infected plants, and use resistant varieties.",
+  "Tomato - Mosaic Virus": "⚠️ Remove infected plants and control insect vectors. Use virus-free seeds.",
+  "Tomato - Healthy": "✅ Tomato plant is healthy. Maintain proper watering, fertilization, and pest control."
+}
