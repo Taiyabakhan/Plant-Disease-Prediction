@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Disease Classifier</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🌿 Plant Disease Classifier</h1>
+    </header>
+
+    <div class="container">
+        <!-- Upload Form -->
+        <form method="POST" enctype="multipart/form-data" class="upload-box">
+            <input type="file" name="file" accept="image/*" onchange="previewImage(event)" required><br>
+            <button type="submit" class="btn" id="classifyBtn" disabled>Classify</button>
+        </form>
+
+        <div id="preview-container" class="grid">
+            {% if plant_name %}
+            <div class="grid" id="result-grid">
+                <!-- Uploaded Image -->
+                <div class="card">
+                    <h3>📸 Uploaded Image</h3>
+                    <img src="{{ uploaded_image }}" alt="Uploaded Image">
+                </div>
+
+                {% if heatmap_image %}
+                <div class="card">
+                    <h3>🔥 Heatmap (Integrated Gradients)</h3>
+                    <img src="{{ heatmap_image }}" alt="Heatmap">
+                </div>
+                {% endif %}
+
+                <!-- Prediction Results -->
+                <div class="card">
+                    <h3>📊 Prediction Results</h3>
+                    <p><strong>Plant:</strong> {{ plant_name }}</p>
+                    <p><strong>Status:</strong>
+                        {% if status == 'healthy' %} ✅ Healthy {% else %} ⚠️ Disease {% endif %}
+                    </p>
+                    {% if disease_name %}
+                        <p><strong>Disease:</strong> {{ disease_name }}</p>
+                    {% endif %}
+                    <p><strong>Confidence:</strong> {{ confidence }}%</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: {{ confidence }}%;"></div>
+                    </div>
+                    {% if alternatives %}
+                        <h4>🔄 Alternatives:</h4>
+                        <ul>
+                            {% for alt, score in alternatives %}
+                                <li>{{ alt }} ({{ score }}%)</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% if recommendation %}
+                        <p class="recommend"><strong>💡 Recommendation:</strong> {{ recommendation }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="results-section">
+                <!-- Download Report -->
+                <div class="download-section">
+                    <form method="POST" action="{{ url_for('download_report') }}">
+                        <input type="hidden" name="uploaded_image_path" value="{{ uploaded_image|replace('/static','static') }}">
+                        <input type="hidden" name="heatmap_path" value="{{ heatmap_image|replace('/static','static') }}">
+                        <input type="hidden" name="plant_name" value="{{ plant_name }}">
+                        <input type="hidden" name="disease_name" value="{{ disease_name }}">
+                        <input type="hidden" name="status" value="{{ status }}">
+                        <input type="hidden" name="confidence" value="{{ confidence }}">
+                        <input type="hidden" name="recommendation" value="{{ recommendation }}">
+                        <input type="hidden" name="alternatives" value="{{ alternatives|tojson }}">
+                        <button type="submit" class="btn btn-success big-download-btn">📥 Download Report</button>
+                    </form>
+                </div>
+                {% if history and history|length > 0 %}
+                <div class="card history">
+                    <h3>📜 Session History</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Prediction</th>
+                                <th>Confidence</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in history %}
+                            <tr>
+                                <td><img src="{{ item.image }}" alt="Leaf" style="width:80px; height:80px; object-fit:cover;"></td>
+                                <td>{{ item.prediction }}</td>
+                                <td>{{ item.confidence }}%</td>
+                                <td>{{ item.timestamp }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <form method="POST" action="{{ url_for('clear_history') }}">
+                        <button type="submit" class="btn danger">🧹 Clear History</button>
+                    </form>
+                </div>
+                {% endif %}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    <script>
+    const classifyBtn = document.getElementById('classifyBtn');
+
+    function previewImage(event) {
+        const file = event.target.files[0];
+        if (!file || !file.type.startsWith('image/')) {
+            alert("Please upload a valid image file!");
+            classifyBtn.disabled = true;
+            return;
+        }
+        classifyBtn.disabled = false;
+
+        const reader = new FileReader();
+        reader.onload = function() {
+            const container = document.getElementById('preview-container');
+            container.innerHTML = `
+                <div class="card preview-card">
+                    <h3>Preview</h3>
+                    <img src="${reader.result}" style="width:100%; height:250px; object-fit:cover;">
+                </div>
+            `;
+
+            const resultGrid = document.getElementById('result-grid');
+            if (resultGrid) resultGrid.remove();
+        }
+        reader.readAsDataURL(file);
+    }
+    </script>
+</body>
+<footer>
+    Made with ❤️ by Taiyaba Khan<br>
+    AI Internship Project at IBM-PBEL
+</footer>
+</html>
