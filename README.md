@@ -36,7 +36,7 @@ Due to limited local compute power, using Google Colab with a TPU backend enable
 
 Run the end-to-end workflow (data loading, preprocessing, training, evaluation, and inference) in Colab:
 
-👉 **[Open Colab Notebook](https://colab.research.google.com/drive/1p2u7vJHqAe0BEGJbUsmAKuqRg42EGYQV?usp=sharing#scrollTo=yZvUe0nFE_s3)**
+👉 **[Open Colab Notebook](https://colab.research.google.com/drive/1d3mVcoinztULLif3DzTMcbcA7KGha14W?usp=sharing)**
 
 
 Feel free to open the notebook to view or run the code directly—training, evaluation, and all included insights are there for exploration.
